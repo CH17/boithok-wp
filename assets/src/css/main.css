@@ -399,6 +399,13 @@ h6,
   color: #343a40;
 }
 
+h1.page-title {
+  font-size: 4rem;
+}
+h2.post-title {
+  font-size: 2rem;
+}
+
 h1,
 .h1 {
   font-size: 6rem;
@@ -4969,7 +4976,7 @@ input[type="button"].btn-block {
 .badge {
   display: inline-block;
   padding: 0.25em 0.4em;
-  font-size: 75%;
+  font-size: 0.9rem;
   font-weight: 700;
   line-height: 1;
   text-align: center;
@@ -10420,13 +10427,12 @@ p.lead {
   font-weight: 400;
 }
 
-.subheading {
+.meta-text {
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {

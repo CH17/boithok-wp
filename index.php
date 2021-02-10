@@ -1,35 +1,41 @@
 <?php
-/*
-# Main template file
-# @package Boithok    
-*/
+
+/****************************
+# Index page
+# 
+@package Boithok
+# 
+# 
+***************************/
 ?>
 
-    <?php get_header() ; ?>
+<?php get_header() ; ?>
 
-     <!-- Page Content-->
-     <div class="container-fluid p-0">
-        <!-- About-->
-        <section class="resume-section" id="about">
+     <main class="container-fluid p-0 page">
+        <section class="resume-section" id="main" role="main">
             <div class="resume-section-content">
-                <h1 class="mb-0">
-                    Clarence
-                    <span class="text-primary">Taylor</span>
-                </h1>
-                <div class="subheading mb-5">
-                    3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-                    <a href="mailto:name@email.com">name@email.com</a>
-                </div>
-                <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
-                <div class="social-icons">
-                    <a class="social-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="social-icon" href="#"><i class="fab fa-github"></i></a>
-                    <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
+
+            <?php
+                if( have_posts() ) : ?>
+
+                    <?php if( is_home() && ! is_front_page() ){ ?>
+                        <h1 class="page-title mb-5"> <?php esc_html( single_post_title() ); ?> </h1>
+                    <?php } ?>                    
+
+                <?php while( have_posts() ) : the_post(); ?>  
+
+                    <?php get_template_part( 'templates/content-excerpt' ); ?>
+
+                <?php endwhile; ?>
+                
+                <?php else : ?>            
+
+                   <?php get_template_part( 'templates/content-none' );  ?>
+                
+                <?php endif; ?>
             </div>
         </section>
            
-        </div>
+        </main>
 
     <?php get_footer() ?>

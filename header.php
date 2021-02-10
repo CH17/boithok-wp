@@ -23,4 +23,4 @@
 <body <?php body_class(); ?> >
     
 <?php if(function_exists('wp_body_open')) { wp_body_open(); } ?>
-<?php get_template_part('template-parts/nav'); ?>
+<?php get_template_part('templates/partials/nav'); ?>
