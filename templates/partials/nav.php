@@ -30,12 +30,12 @@ $header_menu_items = wp_get_nav_menu_items($menu_id);
                         if( $has_children ){ ?>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link  dropdown-toggle" href="<?php echo esc_url($item->url); ?>" data-toggle="dropdown"> 
+                                <a class="nav-link  dropdown-toggle <?php echo $menus->active_menu($item); ?>" href="<?php echo esc_url($item->url); ?>" data-toggle="dropdown"> 
                                     <?php echo esc_html($item->title); ?>  </a>
                                 <ul class="dropdown-menu">
                                     <?php 
                                         foreach($child_menu_items as $child){ ?>
-                                            <li class="nav-item"><a class="nav-link dropdown-item"
+                                            <li class="nav-item"><a class="nav-link dropdown-item <?php echo $menus->active_menu($item); ?>"
                                                  href="<?php echo esc_url($child->url) ; ?>">
                                                  <?php echo esc_html($child->title); ?></a>
                                                 </li>
@@ -46,7 +46,7 @@ $header_menu_items = wp_get_nav_menu_items($menu_id);
 
                         <?php }else{ ?>
 
-                            <li class="nav-item"><a class="nav-link" href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
+                            <li class="nav-item"><a class="nav-link <?php echo $menus->active_menu($item); ?>" href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
 
                      <?php   }
                     }

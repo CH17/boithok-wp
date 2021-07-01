@@ -9,7 +9,15 @@
 ?>
 
 <h2 class="post-title">
-    <a href="<?php esc_url( the_permalink() );  ?>">
-        <?php esc_html( the_title() ); ?> 
-    </a>
+    <?php 
+        if (is_single()) {
+            esc_html( the_title() );
+        }else{
+            ?>
+            <a href="<?php esc_url( the_permalink() );  ?>">
+                <?php esc_html( the_title() ); ?> 
+            </a>
+            <?php        
+        }
+    ?>
 </h2>

@@ -7,7 +7,6 @@
 # 
 ****************************/
 
-
 if(! defined('BOITHOK_DIR')) { 
     define('BOITHOK_DIR', untrailingslashit( get_template_directory() ));
 }
@@ -36,3 +35,12 @@ require_once BOITHOK_DIR.'/vendor/autoload.php';
  }
 
 boithok_theme_instanace();
+
+
+// function vince_check_active_menu( $menu_item ) {
+//     $actual_link = ( isset( $_SERVER['HTTPS'] ) ? "https" : "http" ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+//     if ( $actual_link == $menu_item->url ) {
+//         return 'active';
+//     }
+//     return '';
+// }

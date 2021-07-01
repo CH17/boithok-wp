@@ -54,4 +54,12 @@ class Menus {
         return $children;
 
     }
+
+    public function active_menu( $menu_item ) {
+        $actual_link = ( isset( $_SERVER['HTTPS'] ) ? "https" : "http" ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        if ( $actual_link == $menu_item->url ) {
+            return 'active';
+        }
+        return '';
+    }
 }

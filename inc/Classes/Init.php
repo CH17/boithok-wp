@@ -12,14 +12,15 @@ use Boithok\Traits\Singleton;
 
 class Init{
 
-    use Singleton;
+    use Singleton; 
 
     protected function __construct()
     {
        Assets::get_instance();
-       $this->setup_theme_hooks();
+       $this->setup_theme_hooks(); 
        Filters::get_instance();
        Menus::get_instance();
+       Customizer::get_instance();
     }
 
 
@@ -56,7 +57,5 @@ class Init{
         if( !isset($content_width) ){
             $content_width = 1240;
         }
-
-
-    }
+    }    
 }
